@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+<body>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand"><%= title %></h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link active" href="#">新增記帳</a>
+                </nav>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">
+            <article>
+                <h2>新增消費</h2>
+                <form method="POST" action="/accounts/create">
+                    <div class="form-group row">
+                        <input type="text" class="form-control col-12 my-2" name="title" placeholder="請輸入消費標題">
+                        <select class="form-control col-4 mr-2" name="type" id="">
+                            <option value="">請選擇類別</option>
+                            <option value="food">食</option>
+                            <option value="clothes">衣</option>
+                            <option value="home">住</option>
+                            <option value="traffic">行</option>
+                            <option value="study">育</option>
+                            <option value="play">樂</option>
+                        </select>
+                        <input type="number" class="form-control col-4 mr-2" name="cost" placeholder="請輸入消費金額">
+                        <button class="btn btn-dark">送出</button>
+
+                    </div>
+                </form>
+            </article>
+        </main>
+
+        <footer class="text-center mt-auto">
+            <div class="inner">
+                <p>Node.js iRich的練習...</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
